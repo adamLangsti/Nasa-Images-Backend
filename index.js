@@ -8,10 +8,10 @@ const port = process.env.PORT;
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.status(200).send('Home Page');
+    res.status(200).send('Localhost running on port 5000...');
 });
 
-app.get('/api/images', (req, res) => {
+app.get('/api', (req, res) => {
     const newImages = photos.map((images) => {
         const { id, img_src, earth_date, camera: name } = images;
         return { id, img_src, earth_date, name };
